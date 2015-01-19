@@ -1,0 +1,82 @@
+//LEADERBOARD
+.loop-lists (@n; @class-list; @bg-color) {
+	.generate-li(@n);
+	.generate-li(@n, @i: 1) when (@i =< @n) {
+	  li.@{class-list}-@{i} > div:first-child {
+	  	background-color: extract(@bg-color, @i);
+	  }
+	  
+	  .generate-li(@n, (@i + 1));
+	}
+}
+
+
+//LEADERBOARD-b
+.loop-lists-b (@n; @class-list; @bg-color) {
+	.generate-li(@n);
+	.generate-li(@n, @i: 1) when (@i =< @n) {
+	  li.@{class-list}-@{i} > div:first-child when (@i =< 1) {
+	  	background-color: (@c-base-leaderboard);
+	  }
+	  
+	  li.@{class-list}-@{i} > div:first-child when (@i > 1) {
+	  	background-color:  spin(lighten(@c-base-leaderboard, @i * 25% / @n ), 10);
+	  }
+
+	  .generate-li(@n, (@i + 1));
+	}
+
+}
+
+
+//LEADERBOARD-c
+.loop-lists-c (@n; @class-list; @bg-color; @bg-color2) {
+	.generate-li(@n);
+	.generate-li(@n, @i: 1) when (@i =< @n) {
+	  li.@{class-list}-@{i} > div:first-child {
+	  		background-color: spin(mix(@bg-color, @bg-color2, @i * 50% / @n), 20);
+	  }
+	  
+	  .generate-li(@n, (@i + 1));
+	}
+}
+
+
+// Animations
+.animation(@animation) {
+  -webkit-animation: @animation;
+          animation: @animation;
+}
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+          animation-name: @name;
+}
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+          animation-duration: @duration;
+}
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+          animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+          animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+          animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+          animation-direction: @direction;
+}
+
+
+//ANIMATION SPINNER
+.keyframes (@name, @fromRules, @toRules) {
+    @-webkit-keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+	    @keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+}
+
+

@@ -1,16 +1,49 @@
-@import "../bower_components/bootstrap/less/bootstrap.less";
-@icon-font-path: "../fonts/glyphicons/";
+//@import "../bower_components/bootstrap/less/bootstrap.less";
+//@icon-font-path: "../fonts/glyphicons/";
 
-@import "../bower_components/font-awesome/less/font-awesome.less";
+@import "app.less";
 @fa-font-path: "../fonts/font-awesome";
 
-.browsehappy {
-  margin: 0.2em 0; 
-  background: #ccc; 
-  color: #000; 
-  padding: 0.2em 0; 
+
+img {
+	max-width: 100%;
 }
 
-.jumbotron {
-  margin: 50px auto 0 auto;
+.top-radius {
+	.border-top-radius(5px);
+	overflow: hidden;
+	z-index: 100;
 }
+
+ul, li  {
+	list-style-type:none; 
+	margin:0; 
+	padding:0;
+}
+
+
+
+// FONT SIZE
+.font-size-06 {
+	font-size: 0.6em;
+}
+.font-size-08 {
+	font-size: 0.8em;
+}
+.font-size-085 {
+	font-size: 0.85em;
+}
+
+// FONT
+.special-font {
+	font-family: @font-family-serif;
+	font-style: italic;
+	font-weight: bold;	
+}
+
+.normal-font {
+	font-family: @font-family-serif;
+	font-style: normal;
+	font-weight: normal;
+}
+

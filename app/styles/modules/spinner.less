@@ -1,0 +1,104 @@
+#spinner {
+	position:relative;
+}
+
+
+#isAppLoaded #spinner {
+	position:static;
+} 
+
+.spinner{
+	margin:20px auto;
+	position:relative;
+	width:35px;
+	height:43px;
+}
+
+.spinner.pageLoader{
+	position:absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	width: 35px;
+	height: 43px;
+	z-index:1000;
+}
+
+
+.blockG{
+	position:absolute;
+	background: @bg-spinner2;
+	width:6px;
+	height:13px;
+	.border-top-radius (5px);
+	.border-bottom-radius (0px);
+	.scale(0.4);
+	.animation-name(fadeG);	
+	.animation-duration(1.04s);
+	.animation-iteration-count(infinite);
+	.animation-direction(linear);
+}
+
+#rotateG_1{
+	left:0;
+	top:16px;
+	.animation-delay(0.39s);
+	.rotate(-90deg);
+}
+
+#rotateG_2{
+	left:5px;
+	top:6px;
+	.animation-delay(0.52s);
+	.rotate(-45deg);
+}
+
+#rotateG_3{
+	left:15px;
+	top:2px;
+	.animation-delay(0.65s);
+	.rotate(0deg);
+}
+
+#rotateG_4{
+	right:5px;
+	top:6px;
+	.animation-delay(0.78s);
+	.rotate(45deg);
+}
+
+#rotateG_5{
+	right:0;
+	top:16px;
+	.animation-delay(0.9099999999999999s);
+	.rotate(90deg);
+}
+
+#rotateG_6{
+	right:5px;
+	bottom:4px;
+	.animation-delay(1.04s);
+	.rotate(135deg);
+}
+
+#rotateG_7{
+	bottom:0;
+	left:15px;
+	.animation-delay(1.1700000000000002s);
+	.rotate(180deg);
+}
+
+#rotateG_8{
+	left:5px;
+	bottom:4px;
+	.animation-delay(1.3s);
+	.rotate(-135deg);
+}
+
+
+.keyframes(fadeG, {
+	background-color:@bg-spinner1;
+},
+{
+	background-color:@bg-spinner2;
+});
